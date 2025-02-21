@@ -14,6 +14,7 @@ export function navigateToPage(page) {
             window.location.href = page;
         }
         console.error("Failed to fetch page: " + page);
+        window.location.href = "notFound.html";
     })
 }
 
