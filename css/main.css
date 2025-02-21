@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    color: rgb(250, 240, 230);
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+}
+
+.container {
+    display: flex;
+    width: 90vw;
+    /*max-width: 900px;*/
+    height: 95vh;
+    background-color: #ffffff;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.left_pannel {
+    flex: 1;
+    background-color: rgb(18, 22, 33);
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.menu {
+    width: 100%;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    margin: 10px 0;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.menu-item.active {
+    background-color: hsl(217, 91%, 49%); /* Colore di sfondo per la voce attiva */
+    color: #fff; /* Colore del testo per la voce attiva */
+    transform: translateX(10px); /* Effetto di spostamento */
+}
+
+.menu-item:hover {
+    background-color: hsl(217, 91%, 49%);
+    transform: translateX(10px);
+}
+
+.menu-item i {
+    margin-right: 10px;
+}
+
+.right_pannel {
+    flex: 4;
+    background-color: rgb(26, 32, 48);
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
