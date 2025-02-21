@@ -1,9 +1,9 @@
-export function listMenu(menuarg) {
+export function listItems(listarg) {
     return new Promise((resolve) => {
         document.addEventListener("DOMContentLoaded", () => {
-            let menuItems = document.querySelectorAll(menuarg);
-            console.log(menuItems);
-            resolve(menuItems);
+            let items = document.querySelectorAll(listarg);
+            console.log(items);
+            resolve(items);
         });
     });
 }
@@ -22,7 +22,7 @@ export function highlightActiveMenuItem(menuItems) {
     if (menuItems) {
         menuItems.forEach(item => {
             const page = item.getAttribute('data-page');
-            if ((page === 'home' && currentPage === 'index.html') || `${page}.html` === currentPage) {
+            if (`${page}.html` === currentPage) {
                 item.classList.add('active');
             } else {
                 item.classList.remove('active');
