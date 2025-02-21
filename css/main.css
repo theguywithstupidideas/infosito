@@ -71,3 +71,16 @@ body {
     display: flex;
     flex-direction: column;
 }
+
+.not-found{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 5px;
+    color: #1a1d20;
+}
+
+.not-found > * {
+    margin: 0;
+}
