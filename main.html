@@ -4,31 +4,28 @@
     <link rel="stylesheet" href="css/bs/bootstrap.css">
     <link rel="stylesheet" href="css/main.css">
     <script src="js/bs/bootstrap.js"></script>
+    <script src="js/customComponents.js"></script>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Home</title>
 </head>
 <body>
 <div class="container">
     <!-- Left Pannel -->
     <div class="left_pannel">
         <div class="menu">
-            <div class="menu-item active" data-page="home">
+            <div class="menu-item active" data-page="my-home" page-name="Home">
                 <i class="fas fa-home"></i>
                 <span>Home</span>
             </div>
-            <div class="menu-item" data-page="pages/stats.html">
+            <div class="menu-item" data-page="my-details" page-name="Dettagli">
                 <i class="fas fa-chart-line"></i>
-                <span>Statistiche</span>
-            </div>
-            <div class="menu-item" data-page="settings">
-                <i class="fas fa-cog"></i>
-                <span>Impostazioni</span>
+                <span>Dettagli</span>
             </div>
         </div>
     </div>
 
     <!-- Right Pannel -->
-    <div class="right_pannel">
+    <div class="right_pannel" id="panel">
         <h1>PRO E CONTRO DELLO SMART WORKING</h1>
         <!-- INIZIO CAROSELLO !-->
         <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">

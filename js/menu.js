@@ -1,3 +1,6 @@
+import {attachComponent} from "./nav.js";
+import {SaneCheck} from "./sanity.js";
+
 export function listItems(listarg) {
     return new Promise((resolve) => {
         document.addEventListener("DOMContentLoaded", () => {
@@ -8,26 +11,19 @@ export function listItems(listarg) {
     });
 }
 
-export function navigateToPage(page) {
-    fetch(page).then(response => {
-        if (response.ok) {
-            window.location.href = page;
-        }
-        console.error("Failed to fetch page: " + page);
-        window.location.href = "notFound.html";
+export function highlightActiveMenuItem(menuItems, menuItem) {
+    menuItems.forEach((item) => {
+        item.classList.remove('active');
     })
+    menuItem.classList.add('active');
 }
 
-export function highlightActiveMenuItem(menuItems) {
-    const currentPage = window.location.pathname.split('/').pop();
-    if (menuItems) {
-        menuItems.forEach(item => {
-            const page = item.getAttribute('data-page');
-            if (`${page}.html` === currentPage) {
-                item.classList.add('active');
-            } else {
-                item.classList.remove('active');
-            }
-        });
+export function loadMenuView(component, nameView = "Set view name!"){
+    const view = document.getElementById("panel");
+    const oldView = document.getElementById("test-id");
+    oldView?.remove();
+    if(SaneCheck('HTML-Element', view)){
+        console.log(view);
+        attachComponent(document.createElement(component), view, nameView);
     }
 }

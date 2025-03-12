@@ -6,7 +6,7 @@ body {
     align-items: center;
     color: rgb(250, 240, 230);
     font-family: 'Arial', sans-serif;
-    background-color: #f0f0f0;
+    background-color: #28282e;
 }
 
 .container {
@@ -83,4 +83,12 @@ body {
 
 .not-found > * {
     margin: 0;
+}
+
+body.data-cont {
+    padding: 20px;
+    display: flex;
+    justify-content: start;
+    position: fixed;
+    top: 0;
 }
