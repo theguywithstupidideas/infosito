@@ -11,7 +11,7 @@ class PageDetails extends HTMLElement {
             <h1 style="margin-top: 20px;">${page_name}</h1>
             <div style="display: flex; flex-direction: row; gap: 20px; margin-top: 20px;">
                 <div class="card bg-dark text-white" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
+                    <img src="assets/img/pro.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Pro</h5>
                         <p class="card-text">Scopri i Pro dello Smart Working</p>
@@ -20,11 +20,21 @@ class PageDetails extends HTMLElement {
                 </div>
                 
                 <div class="card bg-dark text-white" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
+                    <img src="assets/img/contro.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Contro</h5>
                         <p class="card-text">Scopri i Contro dello Smart Working</p>
                         <a href="pages/contro.html" class="btn btn-primary">Vai</a>
+                    </div>
+                </div>
+
+                <div class="card bg-dark text-white" style="width: 18rem;">
+                    <img src="assets/img/opinioni.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Opinioni</h5>
+                        <p class="card-text">Scopri le opinioni di Giacomo e Davide</p>
+                        <a href="pages/davide.html" class="btn btn-primary">Davide</a>
+                        <a href="pages/giacomo.html" class="btn btn-primary">Giacomo</a>
                     </div>
                 </div>
             </div>
@@ -42,7 +52,8 @@ class HomeCustom extends HTMLElement {
             <h1>Benvenuto!</h1>
             <p>
                  Lo smart working, che permette di svolgere le proprie attività da remoto, ha guadagnato sempre più popolarità negli ultimi anni, soprattutto a seguito degli eventi che hanno cambiato il mondo.<br>
-                 Ma questa modalità ha dei benefici per la produttività dei lavoratori? Clicca 'dettagli' per scoprire di più
+                 Ma questa modalità ha dei benefici per la produttività dei lavoratori? <span style="color: red; text-decoration: underline;">Clicca 'dettagli' per scoprire di più</span>
+
             </p>
         `;
     }

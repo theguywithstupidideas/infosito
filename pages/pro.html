@@ -1,15 +1,124 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>Pro</title>
-    <script src="../js/customComponents.js" defer></script>
+    <title>Pro dello Smart Working</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <link rel="stylesheet" href="../css/bs/bootstrap.css">
     <link rel="stylesheet" href="../css/main.css">
+    <style>
+        body {
+            background-color: rgb(18, 22, 33);
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: hsl(217, 91%, 49%);
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+        .pro-list {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            max-width: 1000px;
+            margin: auto;
+        }
+        .pro-item {
+            background-color: rgb(26, 32, 48);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+        .pro-item h2 {
+            color: hsl(217, 91%, 49%);
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        .source {
+            font-size: 0.9em;
+            color: #ccc;
+        }
+        .chart-container {
+            margin-top: 50px;
+            text-align: center;
+            max-width: 1000px;
+            margin: auto;
+        }
+        #chart {
+            width: 100%;
+            height: 450px;
+        }
+    </style>
 </head>
-<body class="data-cont">
-    <data-container page-title='Pro'>
-        Hello World!
-    </data-container>
+<body>
+    <h1>Pro dello Smart Working</h1>
+    <div class="pro-list">
+        <div class="pro-item">
+            <h2>1. Incremento della Produttività</h2>
+            <p>Lo smart working può portare a un significativo aumento della produttività. Uno studio del 2015 dell'Università di Stanford ha rilevato un incremento del 13% nella produttività in un'azienda di servizi che ha adottato il lavoro da remoto.</p>
+            <p class="source">Fonte: <a href="https://it.wikipedia.org/wiki/Lavoro_agile" target="_blank">Wikipedia - Lavoro agile</a></p>
+        </div>
+        <div class="pro-item">
+            <h2>2. Riduzione delle Assenze per Malattia</h2>
+            <p>Il lavoro agile contribuisce a diminuire le assenze per malattia. Un'analisi ha mostrato che l'introduzione di forme innovative di lavoro può determinare una riduzione delle assenze per malattia.</p>
+            <p class="source">Fonte: <a href="https://it.wikipedia.org/wiki/Lavoro_agile" target="_blank">Wikipedia - Lavoro agile</a></p>
+        </div>
+        <div class="pro-item">
+            <h2>3. Risparmio Economico per i Dipendenti</h2>
+            <p>Lo smart working permette ai lavoratori di risparmiare sui costi di trasporto. Ad esempio, uno studio ha stimato che se il 10% dei lavoratori australiani fosse impiegato col telelavoro per il 50% del tempo, si potrebbero risparmiare 120 milioni di litri di benzina all'anno.</p>
+            <p class="source">Fonte: <a href="https://it.wikipedia.org/wiki/Telelavoro" target="_blank">Wikipedia - Telelavoro</a></p>
+        </div>
+        <div class="pro-item">
+            <h2>4. Riduzione delle Emissioni di CO₂</h2>
+            <p>Adottare lo smart working contribuisce alla diminuzione delle emissioni di anidride carbonica. Lo stesso studio australiano ha evidenziato che si potrebbero evitare tonnellate di emissioni di CO₂ all'anno grazie al telelavoro.</p>
+            <p class="source">Fonte: <a href="https://it.wikipedia.org/wiki/Telelavoro" target="_blank">Wikipedia - Telelavoro</a></p>
+        </div>
+        <div class="pro-item">
+            <h2>5. Miglioramento dell'Equilibrio Vita-Lavoro</h2>
+            <p>Il lavoro agile offre un migliore equilibrio tra vita lavorativa e privata, poiché consente una maggiore autonomia nella gestione del tempo e dello spazio di lavoro, riducendo lo stress da lavoro.</p>
+            <p class="source">Fonte: <a href="https://it.wikipedia.org/wiki/Lavoro_agile" target="_blank">Wikipedia - Lavoro agile</a></p>
+        </div>
+    </div>
+
+    <div class="chart-container">
+        <h2>Impatto dello Smart Working su Produttività e Ambiente</h2>
+        <div id="chart"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var data = [{
+                type: 'bar',
+                x: ['Produttività', 'Risparmio Benzina', 'Riduzione CO₂'],
+                y: [13, 120, 0], // Modifica il dato della CO₂ se trovi un valore preciso
+                text: ['+13%', '120M litri', 'Dati non disponibili'],
+                textposition: 'auto',
+                marker: {
+                    color: 'hsl(217, 91%, 49%)',
+                    opacity: 0.7,
+                }
+            }];
+
+            var layout = {
+                paper_bgcolor: 'rgb(18, 22, 33)',
+                plot_bgcolor: 'rgb(18, 22, 33)',
+                font: {
+                    color: '#fff'
+                },
+                xaxis: {
+                    tickangle: -45
+                },
+                yaxis: {
+                    title: 'Valori'
+                }
+            };
+
+            Plotly.newPlot('chart', data, layout);
+        });
+    </script>
 </body>
 </html>

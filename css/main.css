@@ -14,7 +14,7 @@ body {
     width: 90vw;
     /*max-width: 900px;*/
     height: 95vh;
-    background-color: #ffffff;
+    background-color: #28282e;
     overflow: hidden;
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -70,6 +70,29 @@ body {
     padding: 20px;
     display: flex;
     flex-direction: column;
+    overflow: auto;
+ /* Nasconde la scrollbar senza disattivare lo scrolling */
+ scrollbar-width: thin;  /* Per Firefox */
+ scrollbar-color: #888 #f0f0f0; /* Colore del thumb e dello sfondo */
+}
+
+/* Per Chrome, Edge e Safari */
+#right-panel::-webkit-scrollbar {
+ width: 8px; /* Spessore della scrollbar */
+}
+
+#right-panel::-webkit-scrollbar-track {
+ background: #f0f0f0; /* Colore della traccia */
+ border-radius: 4px;
+}
+
+#right-panel::-webkit-scrollbar-thumb {
+ background: #888; /* Colore del "thumb" (barra di scorrimento) */
+ border-radius: 4px;
+}
+
+#right-panel::-webkit-scrollbar-thumb:hover {
+ background: #555; /* Cambia colore quando si passa sopra */
 }
 
 .not-found{

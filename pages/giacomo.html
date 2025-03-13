@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opinione di Giacomo sullo Smart Working</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+        }
+        h1 {
+            text-align: center;
+            color: #e27a4a;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .section {
+            background-color: #2a2a2a;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .graph-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        canvas {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Opinione di Giacomo sullo Smart Working</h1>
+        <div class="content">
+            <div class="section">
+                <h2>Riflessione basata sui dati</h2>
+                <p>Analizzando attentamente i dati relativi allo smart working, emerge chiaramente una realtà complessa, fatta di vantaggi significativi e criticità da non sottovalutare. L'incremento della produttività del 13% registrato da molte aziende che hanno adottato il telelavoro dimostra che, se ben strutturato, il lavoro remoto può essere un'opportunità per migliorare le performance aziendali. Tuttavia, questa maggiore produttività potrebbe essere parzialmente compensata dai problemi di concentrazione e dalla necessità di una gestione più autonoma delle attività.</p>
+                <p>Dal punto di vista del benessere, è innegabile che la riduzione delle assenze per malattia e il risparmio sui costi di trasporto siano elementi positivi. Lavorare da casa permette di evitare spostamenti stressanti e di organizzare meglio il proprio tempo. D’altra parte, l'isolamento sociale e la difficoltà nel tracciare un confine netto tra vita privata e lavorativa possono generare nuove forme di stress e compromettere la qualità della vita.</p>
+                <p>Un altro aspetto rilevante è quello ambientale: il calo delle emissioni di CO₂ derivante dalla riduzione degli spostamenti quotidiani è un vantaggio indiscutibile, che potrebbe contribuire a una transizione verso modelli più sostenibili.</p>
+                <p>Non si può però ignorare il problema della collaborazione tra colleghi. La distanza fisica incide sulla creatività e sulla comunicazione, rendendo più difficile il confronto diretto e rallentando talvolta i processi decisionali. Inoltre, emergono nuove sfide legate alla sicurezza informatica e alla protezione dei dati aziendali.</p>
+                <p>Alla luce di queste considerazioni, ritengo che il modello più efficace non sia un telelavoro totale, ma piuttosto una soluzione <strong>ibrida</strong>. Un equilibrio tra giornate in ufficio e lavoro da remoto potrebbe massimizzare i benefici del lavoro agile, senza perdere i vantaggi della collaborazione diretta e del senso di appartenenza aziendale.</p>
+            </div>
+            <div class="graph-container">
+                <h2>Confronto tra Benefici e Svantaggi</h2>
+                <canvas id="chart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        var ctx = document.getElementById('chart').getContext('2d');
+        var chart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Efficienza', 'Benessere', 'Sostenibilità', 'Collaborazione'],
+                datasets: [{
+                    label: 'Impatto (%)',
+                    data: [13, 10, 15, -10],
+                    backgroundColor: ['green', 'blue', 'lightgreen', 'red']
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

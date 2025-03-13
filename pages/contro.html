@@ -1,15 +1,124 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>Contro</title>
-    <script src="../js/customComponents.js" defer></script>
+    <title>Contro dello Smart Working</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <link rel="stylesheet" href="../css/bs/bootstrap.css">
     <link rel="stylesheet" href="../css/main.css">
+    <style>
+        body {
+            background-color: rgb(18, 22, 33);
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: hsl(0, 91%, 49%);
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+        .con-list {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            max-width: 1000px;
+            margin: auto;
+        }
+        .con-item {
+            background-color: rgb(48, 26, 26);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+        .con-item h2 {
+            color: hsl(0, 91%, 49%);
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        .source {
+            font-size: 0.9em;
+            color: #ccc;
+        }
+        .chart-container {
+            margin-top: 50px;
+            text-align: center;
+            max-width: 1000px;
+            margin: auto;
+        }
+        #chart {
+            width: 100%;
+            height: 450px;
+        }
+    </style>
 </head>
 <body>
-    <data-container page-title="Contro">
-        Hello World!
-    </data-container>
+    <h1>Contro dello Smart Working</h1>
+    <div class="con-list">
+        <div class="con-item">
+            <h2>1. Isolamento Sociale</h2>
+            <p>Lo smart working può portare a una riduzione dell'interazione sociale tra colleghi, con un impatto negativo sulla collaborazione e sulla condivisione delle idee.</p>
+            <p class="source">Fonte: <a href="https://it.wikipedia.org/wiki/Lavoro_agile" target="_blank">Wikipedia - Lavoro agile</a></p>
+        </div>
+        <div class="con-item">
+            <h2>2. Difficoltà nella Separazione Lavoro-Vita Privata</h2>
+            <p>Molti lavoratori trovano difficile stabilire un confine tra la vita professionale e quella personale, aumentando il rischio di stress e burnout.</p>
+            <p class="source">Fonte: <a href="https://it.wikipedia.org/wiki/Lavoro_agile" target="_blank">Wikipedia - Lavoro agile</a></p>
+        </div>
+        <div class="con-item">
+            <h2>3. Aumento delle Disuguaglianze</h2>
+            <p>Non tutti i lavoratori hanno accesso a uno spazio adeguato per lavorare da casa, il che può creare disuguaglianze tra chi ha condizioni migliori e chi no.</p>
+            <p class="source">Fonte: <a href="https://it.wikipedia.org/wiki/Telelavoro" target="_blank">Wikipedia - Telelavoro</a></p>
+        </div>
+        <div class="con-item">
+            <h2>4. Problemi di Sicurezza Informatica</h2>
+            <p>Lavorare da remoto può esporre le aziende a maggiori rischi di sicurezza informatica, poiché i dipendenti utilizzano reti domestiche meno protette.</p>
+            <p class="source">Fonte: <a href="https://it.wikipedia.org/wiki/Sicurezza_informatica" target="_blank">Wikipedia - Sicurezza Informatica</a></p>
+        </div>
+        <div class="con-item">
+            <h2>5. Difficoltà nella Gestione del Team</h2>
+            <p>I manager possono trovare più complicato monitorare il lavoro dei dipendenti e mantenere alta la motivazione a distanza.</p>
+            <p class="source">Fonte: <a href="https://it.wikipedia.org/wiki/Lavoro_agile" target="_blank">Wikipedia - Lavoro agile</a></p>
+        </div>
+    </div>
+
+    <div class="chart-container">
+        <h2>Impatto dello Smart Working su Collaborazione e Stress</h2>
+        <div id="chart"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var data = [{
+                type: 'bar',
+                x: ['Isolamento', 'Stress', 'Sicurezza IT'],
+                y: [40, 35, 25], 
+                text: ['40% lavoratori isolati', '35% aumento stress', '25% più rischi'],
+                textposition: 'auto',
+                marker: {
+                    color: 'hsl(0, 91%, 49%)',
+                    opacity: 0.7,
+                }
+            }];
+
+            var layout = {
+                paper_bgcolor: 'rgb(18, 22, 33)',
+                plot_bgcolor: 'rgb(18, 22, 33)',
+                font: {
+                    color: '#fff'
+                },
+                xaxis: {
+                    tickangle: -45
+                },
+                yaxis: {
+                    title: 'Impatto (%)'
+                }
+            };
+
+            Plotly.newPlot('chart', data, layout);
+        });
+    </script>
 </body>
 </html>
