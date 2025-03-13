@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opinione di Davide sullo Smart Working</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+        }
+        h1 {
+            text-align: center;
+            color: #4a90e2;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .section {
+            background-color: #2a2a2a;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .graph-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        canvas {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Opinione di Davide sullo Smart Working</h1>
+        <div class="content">
+            <div class="section">
+                <h2>La mia opinione sullo Smart Working</h2>
+                <p>Alla luce dei dati analizzati, ritengo che lo smart working rappresenti un'opportunità significativa per il miglioramento della produttività e del benessere dei lavoratori. L'aumento del 13% della produttività nei contesti che adottano il telelavoro dimostra come questa modalità possa essere efficace nel migliorare le performance aziendali.</p>
+                <p>Inoltre, la riduzione delle assenze per malattia e il risparmio sui trasporti portano evidenti benefici per i lavoratori, migliorandone la qualità della vita. Tuttavia, non si possono ignorare i problemi legati allo stress e alla difficoltà di separare lavoro e vita privata, che potrebbero avere effetti negativi nel lungo termine.</p>
+                <p>Anche dal punto di vista ambientale, il telelavoro risulta vantaggioso, riducendo le emissioni di CO₂ grazie alla minore necessità di spostamenti. Questo impatto positivo non può essere sottovalutato, specialmente in un'epoca in cui la sostenibilità è un tema centrale.</p>
+                <p>D'altro canto, i limiti della collaborazione e i rischi per la sicurezza informatica restano questioni critiche. La minore interazione tra colleghi può compromettere il lavoro di squadra e la creatività, due elementi essenziali per molte aziende.</p>
+                <p>Alla luce di questi fattori, la mia posizione è chiara: lo smart working non può essere l'unica soluzione, ma deve essere integrato con momenti di lavoro in presenza. Un modello <strong>ibrido</strong> che bilanci flessibilità e interazione diretta rappresenta, a mio avviso, il compromesso migliore per garantire sia l'efficienza aziendale sia il benessere dei lavoratori.</p>
+            </div>
+            <div class="graph-container">
+                <h2>Bilancio tra Pro e Contro</h2>
+                <canvas id="chart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        var ctx = document.getElementById('chart').getContext('2d');
+        var chart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Produttività', 'Benessere', 'Impatto Ambientale', 'Collaborazione'],
+                datasets: [{
+                    label: 'Impatto (%)',
+                    data: [13, 10, 15, -10],
+                    backgroundColor: ['green', 'blue', 'lightgreen', 'red']
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
